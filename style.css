@@ -281,14 +281,17 @@ body {
 }
 
 .work__image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover; /* crop slightly if needed */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
 }
-
-
+.work__image.fade-out {
+  opacity: 0;
+}
 .work__image:hover {
     transform: scale(1.03);
 }
