@@ -94,14 +94,21 @@ body {
 /* ---------- HEADER ---------- */
 .header {
   min-height: 100vh;
-  background: linear-gradient(
-      135deg,
-      #f7f4fd 0%,
-      #e8e1f5 50%,
-      #ddd2f0 100%
-  );
-  position: relative;
+  background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("./images/purple-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
 }
+
 
 /* ---------- NAV ---------- */
 .nav {
@@ -378,7 +385,7 @@ body {
 }
 
 .back-to-top:hover {
-    background: #e52b4f;
+    background: #cd86c7;
 }
 
 .back-to-top__image {
