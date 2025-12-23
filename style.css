@@ -50,7 +50,7 @@ h2::after {
     bottom: -0.5rem;
     width: 5rem;
     height: 3px;
-    background: #ff3258;
+    background: #cd86c7;
 }
 
 h3 {
@@ -223,12 +223,12 @@ body {
     bottom: -4px;
     height: 2px;
     width: 0;
-    background: #ff3258;
+    background: #cd86c7;
     transition: width 0.3s ease;
 }
 
 .nav__link:hover {
-    color: #ff3258;
+    color: #cd86c7;
 }
 
 .nav__link:hover::after {
@@ -375,7 +375,7 @@ body {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: #ff3258;
+    background: #cd86c7;
     border-radius: 50%;
     padding: 0.8rem;
     display: flex;
