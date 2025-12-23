@@ -213,15 +213,17 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Modal setup
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImg");
   const modalCaption = document.getElementById("modalCaption");
   const closeBtn = document.querySelector(".modal-close");
 
   const projectImages = {
-    ansible: ["./images/A11.png", "./images/A111.png", "./images/A2.png", "./images/A3.png", "./images/A4.png", "./images/A6.png"],
-    ecommerce: ["./images/E1.png", "./images/E4.png", "./images/E5.png", "./images/E6.png"],
-    ecommerceAngular: ["./images/ang8.png", "./images/ang9.png", "./images/ang10.png", "./images/ang11.png", "./images/ang12.png"]
+    ansible: ["./images/A11.png","./images/A111.png","./images/A2.png","./images/A3.png","./images/A4.png","./images/A6.png"],
+    ecommerce: ["./images/E1.png","./images/E4.png","./images/E5.png","./images/E6.png"],
+    ecommerceAngular: ["./images/ang8.png","./images/ang9.png","./images/ang10.png","./images/ang11.png","./images/ang12.png"]
   };
 
   let currentImages = [];
@@ -235,16 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
     modalCaption.textContent = `Project: ${projectKey} Image ${currentIndex + 1}`;
   }
 
-  // Attach click events
-  document.getElementById("ansibleProjectImg").addEventListener("click", () => openModal("ansible"));
-  document.getElementById("ecommerceImg").addEventListener("click", () => openModal("ecommerce"));
-  document.getElementById("ecommerceAngularImg").addEventListener("click", () => openModal("ecommerceAngular"));
-
-  // Close modal
   closeBtn.onclick = () => modal.style.display = "none";
   modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
-
-  // Keyboard navigation
   document.addEventListener("keydown", e => {
     if (modal.style.display === "block") {
       if (e.key === "ArrowRight") {
@@ -260,7 +254,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  // IMAGE SLIDER (independent from modal)
+  function imageSlider(imgId, images, delay = 3000) {
+    const img = document.getElementById(imgId);
+    if (!img) return;
+
+    let index = 0;
+    let intervalId = null;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !intervalId) {
+        intervalId = setInterval(() => {
+          img.classList.add("fade-out");
+          setTimeout(() => {
+            index = (index + 1) % images.length;
+            img.src = images[index]; // only changes visual slider
+            img.classList.remove("fade-out");
+          }, 400);
+        }, delay);
+      }
+      if (!entry.isIntersecting && intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }, { threshold: 0.6 });
+
+    observer.observe(img);
+
+    // When clicked, open modal at CURRENT slider index
+    img.addEventListener("click", () => {
+      const projectKey = imgId === "ansibleProjectImg" ? "ansible" :
+                         imgId === "ecommerceImg" ? "ecommerce" : "ecommerceAngular";
+      openModal(projectKey, index); // start modal at current slider image
+    });
+  }
+
+  // Initialize sliders
+  imageSlider("ansibleProjectImg", projectImages.ansible);
+  imageSlider("ecommerceImg", projectImages.ecommerce);
+  imageSlider("ecommerceAngularImg", projectImages.ecommerceAngular);
+
 });
+
 
 
 </script>
