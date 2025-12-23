@@ -40,13 +40,6 @@ setInterval(() => {
 
 }, 3000); 
 const angularEcommerceImages = [
-  "./images/Ang1.png",
-  "./images/ang2.png",
-  "./images/ang3.png",
-  "./images/Ang4.png",
-  "./images/ang5.png",
-  "./images/ang6.png",
-  "./images/ang7.png",
   "./images/ang8.png",
   "./images/ang9.png",
   "./images/ang10.png",
