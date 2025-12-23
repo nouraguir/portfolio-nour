@@ -1,0 +1,235 @@
+/* ------------------- FONTS ------------------- */
+@font-face {
+    font-family: 'Hk Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Jost-Regular.ttf') format('woff');
+}
+
+/* ------------------- GLOBAL ------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --font-size-small: 1.8rem;
+    --font-size-normal: 2.2rem;
+    --font-size-medium: 2.8rem;
+    --font-size-medium-1: 3.6rem;
+    --font-size-large: 5.5rem;
+    --font-size-huge: 7.5rem;
+    --font-stack: 'Hk Grotesk', sans-serif;
+
+    --line-height-normal: 1.7;
+    --line-height-small: 1.2;
+
+    --black: #000;
+    --pink: #ff3258;
+    --white: #f0e9f2;
+    --white-1: #e5e5e6da;
+
+    --container-max-width: 1180px;
+    --container-normal-width: 800px;
+    --container-medium-width: 700px; 
+    --container-small-width: 500px;
+
+    --gutter-huge: 12rem;
+    --gutter-medium: 6rem;
+    --gutter-normal: 3rem;
+    --gutter-small-1: 2.5rem;
+    --gutter-small: 2rem;
+
+    --border-light: 1px solid rgb(36, 35, 35);
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@media(max-width: 1000px) {
+    html {
+        font-size: 52%;
+    }
+}
+
+/* ------------------- BODY ------------------- */
+body {
+    font-size: var(--font-size-small);
+    font-family: Arial, sans-serif; /* Using your preferred font */
+    font-weight: 400;
+    color: var(--white-1);
+    line-height: var(--line-height-normal);
+    background-color: #ffffff; /* Your background */
+    overflow-x: hidden;
+}
+
+/* ------------------- ROW ------------------- */
+.row {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+@media(max-width: 1340px) {
+    .row {
+        max-width: 1100px;
+    }
+}
+
+@media(max-width: 1240px) {
+    .row {
+        padding: 0 var(--gutter-medium);
+    }
+}
+
+@media(max-width: 600px) {
+    .row {
+        padding: 0 var(--gutter-small);
+    }
+}
+
+/* ------------------- HEADINGS ------------------- */
+h1, h2, h3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    line-height: var(--line-height-small);
+    color: var(--black); /* changed to visible on white background */
+}
+
+h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--gutter-medium);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 10rem;
+    background: var(--pink);
+    margin: var(--gutter-small) 0;
+}
+
+/* ------------------- BUTTONS ------------------- */
+a, .btn {
+    color: var(--black);
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid var(--pink);
+    padding: 1rem 2.5rem;
+    display: inline-block;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    height: 100%;
+    background: var(--pink);
+    z-index: -1;
+    transition: all 0.2s ease;
+}
+
+.btn:hover::after {
+    right: 0;
+}
+
+/* ------------------- WORK SECTION ------------------- */
+.work {
+    padding: 3rem;
+}
+
+.work__box {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.work__text {
+    flex: 1;
+}
+
+.work__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--gutter-normal);
+}
+
+.work__list li {
+    display: inline-block;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    background: #f2f2f2;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.work__image-box {
+    flex: 1;
+    max-width: 420px;
+}
+
+.work__image {
+    width: 100%;
+    border-radius: 8px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.work__code {
+    width: 24px;
+    margin-top: 1rem;
+}
+
+/* ------------------- CONTACT ------------------- */
+.contact__info {
+    max-width: var(--container-medium-width);
+}
+
+/* ------------------- FOOTER ------------------- */
+.footer {
+    text-align: center;
+    padding: var(--gutter-medium) 0 var(--gutter-normal);
+    background: #f8f8f8;
+    color: #000;
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-normal) 0;
+    list-style: none;
+}
+
+.footer__social-link-item:not(:last-of-type) {
+    margin-right: var(--gutter-small);
+}
+
+.footer__social-image {
+    height: 4rem;
+}
+
+.footer__github-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__github-buttons iframe {
+    height: 2.5rem;
+    width: 84px;
+    transform: translateY(3px);
+}
