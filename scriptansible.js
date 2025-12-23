@@ -39,7 +39,11 @@ imageSlider("ansibleProjectImg", [
   "./images/A3.png",
   "./images/A4.png",
   "./images/A6.png",
-  "./images/A5.png"
+  "./images/A5.png",
+  "./images/a7.png",
+  "./images/a8.png",
+  "./images/a9.png",
+  "./images/a10.png"
 ]);
 
 imageSlider("ecommerceImg", [
@@ -63,5 +67,14 @@ imageSlider("ecommerceAngularImg", [
   "./images/ang7.png",
   "./images/ang10.png",
   "./images/ang11.png",
-  "./images/ang12.png"
+  "./images/ang12.png",
+  "./images/ang13.png",
+  "./images/ang14.png",
+  "./images/ang15.png",
+  "./images/ang16.png",
+  "./images/ang17.png",
+  "./images/ang18.png",
+  "./images/ang19.png",
+  "./images/ang20.png",
+  "./images/ang21.png"
 ]);
