@@ -58,7 +58,7 @@ imageSlider("ecommerceImg", [
 imageSlider("ecommerceAngularImg", [
   "./images/ang8.png",
   "./images/ang9.png",
-  ".images/Ang1.png",
+  "./images/Ang1.png",
   "./images/ang2.png",
   "./images/ang3.png",
   "./images/ang4.png",
