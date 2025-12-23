@@ -35,8 +35,11 @@ function imageSlider(imgId, images, delay = 3000) {
 imageSlider("ansibleProjectImg", [
   "./images/A11.png",
   "./images/A111.png",
-  "./images/a5.png",
-  "./images/A4.png"
+  "./images/A2.png",
+  "./images/A3.png",
+  "./images/A4.png",
+  "./images/A5.png",
+  "./images/A6.png"
 ]);
 
 imageSlider("ecommerceImg", [
