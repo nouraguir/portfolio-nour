@@ -68,25 +68,123 @@ h3 {
 }
 
 /* ------------------- HEADER ------------------- */
-.header {
-    background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('./images/header.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+  --primary-lilac: #c6b7e2;
+  --primary-lilac-light: #f3effa;
+  --primary-accent: #7a5af8;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
 }
 
-.header__text h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+/* ---------- BODY ---------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-lilac-light);
+  color: var(--text-dark);
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  min-height: 100vh;
+  background: linear-gradient(
+      135deg,
+      #f7f4fd 0%,
+      #e8e1f5 50%,
+      #ddd2f0 100%
+  );
+  position: relative;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 0;
+}
+
+.nav__items {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-accent);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* ---------- HEADER TEXT ---------- */
+.header__text-box {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.header__text {
+  max-width: 600px;
+}
+
+.heading-primary {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .header__text p {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 6px;
+  background: var(--primary-accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(122, 90, 248, 0.25);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .header__text {
+    text-align: center;
+  }
+
+  .heading-primary {
+    font-size: 3rem;
+  }
 }
 
 /* ------------------- NAVIGATION ------------------- */
