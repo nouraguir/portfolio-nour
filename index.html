@@ -217,7 +217,7 @@ const modalImg = document.getElementById("modalImg");
 const modalCaption = document.getElementById("modalCaption");
 const closeBtn = document.querySelector(".modal-close");
 
-// Define images arrays (same as your sliders)
+// Define project images
 const projectImages = {
   ansible: [
     "./images/A11.png",
@@ -242,33 +242,29 @@ const projectImages = {
   ]
 };
 
-// Track current modal state
+// Track modal state
 let currentImages = [];
 let currentIndex = 0;
 
-// Attach click listeners to main images
-const ansibleImg = document.getElementById("ansibleProjectImg");
-const ecommerceImg = document.getElementById("ecommerceImg");
-const ecommerceAngularImg = document.getElementById("ecommerceAngularImg");
-
-ansibleImg.addEventListener("click", () => openModal("ansible", 0));
-ecommerceImg.addEventListener("click", () => openModal("ecommerce", 0));
-ecommerceAngularImg.addEventListener("click", () => openModal("ecommerceAngular", 0));
-
-// Open modal
-function openModal(projectKey, index) {
+// Helper: Open modal for a project
+function openModal(projectKey, startIndex = 0) {
   currentImages = projectImages[projectKey];
-  currentIndex = index;
+  currentIndex = startIndex;
   modal.style.display = "block";
   modalImg.src = currentImages[currentIndex];
   modalCaption.textContent = `Project: ${projectKey} Image ${currentIndex + 1}`;
 }
 
+// Attach click events for each project
+document.getElementById("ansibleProjectImg").addEventListener("click", () => openModal("ansible", 0));
+document.getElementById("ecommerceImg").addEventListener("click", () => openModal("ecommerce", 0));
+document.getElementById("ecommerceAngularImg").addEventListener("click", () => openModal("ecommerceAngular", 0));
+
 // Close modal
 closeBtn.onclick = () => modal.style.display = "none";
 modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-// Keyboard navigation
+// Navigate with keyboard
 document.addEventListener("keydown", e => {
   if (modal.style.display === "block") {
     if (e.key === "ArrowRight") {
@@ -284,6 +280,7 @@ document.addEventListener("keydown", e => {
     }
   }
 });
+
 </script>
 
 
