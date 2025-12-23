@@ -38,19 +38,29 @@ imageSlider("ansibleProjectImg", [
   "./images/A2.png",
   "./images/A3.png",
   "./images/A4.png",
-  "./images/A6.png"
+  "./images/A6.png",
+  "./images/A5.png"
 ]);
 
 imageSlider("ecommerceImg", [
   "./images/E1.png",
   "./images/E4.png",
   "./images/E5.png",
-  "./images/E6.png"
+  "./images/E6.png",
+  "./images/E2.png",
+  "./images/E3.png"
 ]);
 
 imageSlider("ecommerceAngularImg", [
   "./images/ang8.png",
   "./images/ang9.png",
+  ".images/Ang1.png",
+  "./images/ang2.png",
+  "./images/ang3.png",
+  "./images/ang4.png",
+  "./images/ang5.png",
+  "./images/ang6.png",
+  "./images/ang7.png",
   "./images/ang10.png",
   "./images/ang11.png",
   "./images/ang12.png"
