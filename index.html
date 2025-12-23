@@ -55,43 +55,22 @@ scalable solutions. Seeking a working student role to contribute to real product
     <div class="work__boxes">
 
       <!-- PROJECT 1 -->
-      <div class="work__box">
-        <div class="work__text">
-    <h3>Infrastructure Automation Platform Using Ansible</h3>
-    <p>
-        Devzzloped an automated server management platform that lets users execute complex infrastructure workflows with a single click. 
-        The platform simplifies deployment, configuration, and monitoring for Linux-based environments.
-    </p>
-   
-</div>
-
-
+      <div class="work__box"> 
+        <div class="work__text"> 
+          <h3>Ansible Everything</h3> 
+          <p>Web-Based Infrastructure Automation Platform Using Ansible.</p> 
           <ul class="work__list">
-            <li>ReactJs</li>
-            <li>ExpressJs</li>
-            <li>NodeJs</li>
-            <li>Ansible</li>
+             <li>ReactJs</li> 
+             <li>ExpressJs</li>
+             <li>NodeJs</li>
+             <li>Ansible</li>
           </ul>
-
           <div class="work__links">
-            <a
-              href="https://github.com/nouraguir/pfefrontend.git"
-              title="View Source Code"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Source
-            </a>
+            <a href="https://github.com/nouraguir/pfefrontend.git" title="View Source Code" target="_blank" rel="noopener noreferrer">View Code</a>
           </div>
-        </div>
-
+        </div> 
         <div class="work__image-box">
-          <img
-            id="ansibleProjectImg"
-            src="./images/A11.png"
-            class="work__image project-image"
-            alt="Ansible Project Screenshot"
-          />
+          <img id="ansibleProjectImg" src="./images/A11.png" class="work__image clickable" alt="Ansible Project Screenshot" /> 
         </div>
       </div>
 
@@ -99,12 +78,10 @@ scalable solutions. Seeking a working student role to contribute to real product
       <div class="work__box">
         <div class="work__text">
           <h3>E-Commerce Website – Phones & Laptops</h3>
-
           <p>
             WordPress-based e-commerce platform for selling smartphones and laptops,
             featuring product listings, categories, and checkout flow.
           </p>
-
           <ul class="work__list">
             <li>WordPress</li>
             <li>WooCommerce</li>
@@ -112,16 +89,9 @@ scalable solutions. Seeking a working student role to contribute to real product
             <li>MySQL</li>
             <li>HTML / CSS</li>
           </ul>
-
         </div>
-
         <div class="work__image-box">
-          <img
-            id="ecommerceImg"
-            src="./images/E1.png"
-            class="work__image project-image"
-            alt="E-commerce Website Screenshot"
-          />
+          <img id="ecommerceImg" src="./images/E1.png" class="work__image clickable" alt="E-commerce Website Screenshot" />
         </div>
       </div>
 
@@ -129,13 +99,11 @@ scalable solutions. Seeking a working student role to contribute to real product
       <div class="work__box">
         <div class="work__text">
           <h3>E-Commerce Management Platform</h3>
-
           <p>
             Enterprise-style e-commerce platform developed with Angular and Spring Boot,
             supporting product management, orders, and data visualization dashboards.
             Business insights are provided using Power BI.
           </p>
-
           <ul class="work__list">
             <li>Angular</li>
             <li>TypeScript</li>
@@ -143,17 +111,9 @@ scalable solutions. Seeking a working student role to contribute to real product
             <li>REST APIs</li>
             <li>Power BI</li>
           </ul>
-
-        
         </div>
-
         <div class="work__image-box">
-          <img
-            id="ecommerceAngularImg"
-            src="./images/ang8.png"
-            class="work__image project-image"
-            alt="E-commerce Platform Screenshot"
-          />
+          <img id="ecommerceAngularImg" src="./images/ang8.png" class="work__image clickable" alt="E-commerce Platform Screenshot" />
         </div>
       </div>
 
@@ -241,6 +201,30 @@ scalable solutions. Seeking a working student role to contribute to real product
   </a>
   <script src="./index.js"></script>
   <script src="scriptansible.js"></script>
+<!-- Modal for project images -->
+<div id="imageModal" class="modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="modalCaption"></div>
+</div>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalCaption = document.getElementById("modalCaption");
+  const closeBtn = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".work__image").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalCaption.textContent = img.alt || "";
+    });
+  });
+
+  closeBtn.onclick = () => { modal.style.display = "none"; };
+  modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+</script>
 
 </body>
 
