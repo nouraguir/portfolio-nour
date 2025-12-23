@@ -21,8 +21,6 @@ setInterval(() => {
 
 const ecommerceImages = [
   "./images/E1.png",
-  "./images/E2.png",
-  "./images/E3.png",
   "./images/E4.png",
   "./images/E5.png",
   "./images/E6.png"
